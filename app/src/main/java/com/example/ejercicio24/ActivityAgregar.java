@@ -18,12 +18,10 @@ import androidx.appcompat.app.AlertDialog;
 import com.example.ejercicio24.Configuraciones.BdFirmas;
 import com.example.ejercicio24.Configuraciones.SQLiteConexion;
 
-import java.io.ByteArrayOutputStream;
-
 public class ActivityAgregar extends AppCompatActivity {
     SQLiteConexion conexion;
     Lienzo lienzo;
-    Button Eliminar, Lista, Menu, Guardar;
+    Button borrar, List, Menu, Salvar;
     EditText descripcion;
     boolean estado;
 
@@ -35,9 +33,9 @@ public class ActivityAgregar extends AppCompatActivity {
 
         conexion = new SQLiteConexion(this, BdFirmas.NAME_DATABASE, null, 1);
 
-        Eliminar = (Button) findViewById(R.id.btnBorrarFirm);
-        Guardar = (Button) findViewById(R.id.btnIngresar);
-        Lista = (Button) findViewById(R.id.btnLista);
+        borrar = (Button) findViewById(R.id.btnBorrar);
+        Salvar = (Button) findViewById(R.id.btnSalvar);
+        List = (Button) findViewById(R.id.btnLista);
         descripcion = (EditText) findViewById(R.id.txtDescripcion);
         lienzo = (Lienzo) findViewById(R.id.LienzoF);
 
@@ -50,7 +48,7 @@ public class ActivityAgregar extends AppCompatActivity {
             }
         });
 
-        Eliminar.setOnClickListener(new View.OnClickListener() {
+        borrar.setOnClickListener(new View.OnClickListener() {
             @Override
 
             public void onClick(View view) {
@@ -72,14 +70,14 @@ public class ActivityAgregar extends AppCompatActivity {
             }
         });
 
-        Guardar.setOnClickListener(new View.OnClickListener() {
+        Salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveSignaturess();
             }
         });
 
-        Lista.setOnClickListener(new View.OnClickListener() {
+        List.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ActivityAgregar.this, ActivityLista.class);
@@ -89,7 +87,7 @@ public class ActivityAgregar extends AppCompatActivity {
     }
 
     private void saveSignaturess() {
-        if (lienzo.borrado) {
+        if (lienzo.borrar) {
             Toast.makeText(getApplicationContext(), "INGRESA TU FIRMA EN EL ESPACIO EN BLANCO.", Toast.LENGTH_LONG).show();
             return;
         } else if (descripcion.getText().toString().trim().isEmpty()) {

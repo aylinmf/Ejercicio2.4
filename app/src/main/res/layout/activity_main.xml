@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.123" />
 
     <Button
-        android:id="@+id/btnFirmaL"
+        android:id="@+id/btnVFirma"
         android:layout_width="221dp"
         android:layout_height="91dp"
         android:backgroundTint="#48188E"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.718" />
 
     <Button
-        android:id="@+id/btnNFirma"
+        android:id="@+id/btnFirma"
         android:layout_width="225dp"
         android:layout_height="84dp"
         android:backgroundTint="#462188"

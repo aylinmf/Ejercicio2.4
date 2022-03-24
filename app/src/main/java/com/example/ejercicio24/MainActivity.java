@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnAggf = (Button) findViewById(R.id.btnNFirma);
+        btnAggf = (Button) findViewById(R.id.btnFirma);
         btnAggf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        btnVerL = (Button) findViewById(R.id.btnFirmaL);
+        btnVerL = (Button) findViewById(R.id.btnVFirma);
         btnVerL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/Vista"
         android:layout_width="398dp"
         android:layout_height="441dp"
         android:background="#CBC590FA"

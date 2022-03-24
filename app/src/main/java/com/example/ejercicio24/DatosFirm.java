@@ -3,7 +3,7 @@ package com.example.ejercicio24;
 public class DatosFirm {
     Integer id;
     String Descripcion;
-    String imagen;
+    String img;
 
     public DatosFirm(){
 
@@ -12,7 +12,7 @@ public class DatosFirm {
     public DatosFirm(Integer id, String descripcion, String imagen) {
         this.id = id;
         Descripcion = descripcion;
-        this.imagen = imagen;
+        this.img = imagen;
     }
 
     public Integer getId() {
@@ -32,10 +32,10 @@ public class DatosFirm {
     }
 
     public String getImagen() {
-        return imagen;
+        return img;
     }
 
     public void setImagen(String imagen) {
-        this.imagen = imagen;
+        this.img = imagen;
     }
 }

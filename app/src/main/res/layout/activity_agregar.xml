@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/btnBorrarFirm"
+        android:id="@+id/btnBorrar"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="153dp"
         android:layout_height="55dp"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.634" />
 
     <Button
-        android:id="@+id/btnIngresar"
+        android:id="@+id/btnSalvar"
         style="@style/Animation.Design.BottomSheetDialog"
         android:layout_width="155dp"
         android:layout_height="58dp"

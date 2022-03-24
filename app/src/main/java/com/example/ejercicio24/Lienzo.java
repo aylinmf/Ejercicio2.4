@@ -15,7 +15,7 @@ import android.view.View;public class Lienzo extends View {
     private int paintColor = 0xFF000000;
     private Canvas drawCanvas;
     private Bitmap canvasBitmap;
-    public boolean borrado=true;
+    public boolean borrar=true;
     public Lienzo(Context context, AttributeSet attrs){
         super(context, attrs);
         setupDrawing();
@@ -31,7 +31,7 @@ import android.view.View;public class Lienzo extends View {
         drawPaint.setStrokeJoin(Paint.Join.ROUND);
         drawPaint.setStrokeCap(Paint.Cap.ROUND);
         canvasPaint = new Paint(Paint.DITHER_FLAG);
-        borrado = true;
+        borrar = true;
     }
 
     @Override
@@ -68,7 +68,7 @@ import android.view.View;public class Lienzo extends View {
                 return false;
         }
         invalidate();
-        borrado = false;
+        borrar = false;
         return true;
 
     }
@@ -76,7 +76,7 @@ import android.view.View;public class Lienzo extends View {
     public void nuevoDibujo(){
         drawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
         invalidate();
-        borrado = true;
+        borrar = true;
     }
 
 }

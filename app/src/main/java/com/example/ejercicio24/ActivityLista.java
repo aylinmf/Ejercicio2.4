@@ -19,7 +19,7 @@ public class ActivityLista extends AppCompatActivity {
     SQLiteConexion conexion;
 
     RecyclerView.Adapter adapter;
-    RecyclerView recyclerView;
+    RecyclerView Vista;
     RecyclerView.LayoutManager layoutManager;
     ArrayList<DatosFirm> firmList;
     Button btnAggfir;
@@ -30,16 +30,16 @@ public class ActivityLista extends AppCompatActivity {
 
         conexion = new SQLiteConexion(this, BdFirmas.NAME_DATABASE,null,1);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
+        Vista = (RecyclerView) findViewById(R.id.Vista);
+        Vista.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        Vista.setLayoutManager(layoutManager);
 
         firmList = new ArrayList<>();
         getSignaturess();
 
         adapter = new AdapterFirm(firmList);
-        recyclerView.setAdapter(adapter);
+        Vista.setAdapter(adapter);
 
         btnAggfir = (Button) findViewById(R.id.btnVolver);
         btnAggfir.setOnClickListener(new View.OnClickListener() {
@@ -54,15 +54,15 @@ public class ActivityLista extends AppCompatActivity {
     }
     private void getSignaturess(){
         SQLiteDatabase db = conexion.getReadableDatabase();
-        DatosFirm Dfirm = null;
+        DatosFirm Dafirm = null;
         Cursor cursor = db.rawQuery("SELECT * FROM "+ BdFirmas.TABLE_FIRMA,null);
         while (cursor.moveToNext()){
-            Dfirm = new DatosFirm();
-            Dfirm.setId(cursor.getInt(0));
-            Dfirm.setDescripcion(cursor.getString(1));
-            Dfirm.setImagen(cursor.getString(2));
+            Dafirm = new DatosFirm();
+            Dafirm.setId(cursor.getInt(0));
+            Dafirm.setDescripcion(cursor.getString(1));
+            Dafirm.setImagen(cursor.getString(2));
 
-            firmList.add(Dfirm);
+            firmList.add(Dafirm);
         }
     }
 
